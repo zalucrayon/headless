@@ -1,4 +1,3 @@
-# .coderabbit.yaml
 reviews:
   profile: "assertive"
   auto_review:
@@ -8,11 +7,4 @@ reviews:
     - "!**/node_modules/**"
     - "!**/.next/**"
     - "!**/out/**"
-    - "!**/public/**" # Optional: ignore static assets
-  # Focus the AI on technical requirements
-  instructions: >
-    You are an expert in Next.js (App Router), React, and TypeScript.
-    1. Every UI component MUST have a corresponding .test.tsx file using Vitest.
-    2. Check for proper 'use client' directive usage.
-    3. Ensure data fetching is handled in Server Components where possible.
-    4. Flag any JSX that misses basic ARIA labels or alt text.
+    - "!**/public/**"

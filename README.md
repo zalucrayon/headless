@@ -59,19 +59,19 @@ Getting Started
 - clone package https://github.com/milancrayon/t3headless-frontend 
 
 2. Connect TYPO3
-- Set API_LICENSE_KEY in config.js
+- Set API_LICENSE_KEY and API_KEY in config.js (or environment variables)
 
 3. Setup t3headless 
-- Setup use command : "yarn setup" / "npm setup"
+- Setup use command : "yarn setup" / "npm run setup"
 
 4. Theme config & Element generate by  
-- Theme change :  "yarn themebuild" / "npm themebuild"
+- Theme change :  "yarn themebuild" / "npm run themebuild"
 
 5. Start Building
-- Build package : "yarn build" / "npm build"
+- Build package : "yarn build" / "npm run build"
 
 6. Serve package
-- Start package : "yarn start" / "npm start"
+- Start package : "yarn start" / "npm run start"
 ---
 
 Developer Flexibility
@@ -99,7 +99,7 @@ Content should drive the frontend.
 
 License
 
-GNU 2.0 (update if needed)
+T3Headless Proprietary License v1.0 (see LICENSE)
 
 ---
 
