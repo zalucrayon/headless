@@ -1,0 +1,17 @@
+# .coderabbit.yaml
+reviews:
+  profile: "assertive"
+  # This section helps the AI focus on Next.js specific patterns
+  path_filters:
+    - "!**/node_modules/**"
+    - "!**/.next/**"
+    - "!**/out/**"
+  auto_review:
+    enabled: true
+instructions: >
+  You are an expert in Next.js, React, and TypeScript. 
+  When reviewing:
+  1. Ensure every UI component has a corresponding Vitest or Jest test.
+  2. Check for proper use of Server vs. Client components.
+  3. Suggest Playwright E2E tests for complex user flows.
+  4. Verify that Accessibility (A11y) standards are met in JSX.
