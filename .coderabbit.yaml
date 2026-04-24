@@ -1,8 +1,7 @@
 reviews:
-  profile: "chill"
+  profile: "assertive"
   auto_review:
-    enabled: true
-  auto_title_instructions: true
+    enabled: true 
   path_filters:
     - "!**/node_modules/**"
     - "!**/.next/**"
