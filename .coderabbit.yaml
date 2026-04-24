@@ -8,7 +8,7 @@ reviews:
     - "!**/out/**"
   auto_review:
     enabled: true
-instructions: >
+tone_instructions: >
   You are an expert in Next.js, React, and TypeScript. 
   When reviewing:
   1. Ensure every UI component has a corresponding Vitest or Jest test.
