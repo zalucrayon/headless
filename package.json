@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "setup": "node setup-theme.js",
-    "themebuild": "node themebuilder.js"
+    "setup": "npm install && node setup-theme.js",
+    "themebuild": "node themebuilder.js",
+    "postinstall": "node setup-theme.js"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^16.1.6",

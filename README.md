@@ -1,109 +1,36 @@
-T3Headless
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Build headless TYPO3 websites without writing frontend components.
+## Getting Started
 
-T3Headless is a production-ready headless solution for TYPO3 that automatically generates frontend components from TYPO3 Content Blocks and Content Elements.
+First, run the development server:
 
-From TYPO3 backend → to live Next.js components — automatically.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Why T3Headless?
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Traditional headless setups require building and maintaining frontend components manually.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-T3Headless removes that bottleneck.
+## Learn More
 
-- No duplicate work  
-- No manual component syncing  
-- No dependency on frontend developers for every change  
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Key Features
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Auto Component Generation (USP)
-- Create or update a Content Block / Content Element in TYPO3  
-- Automatically generates the corresponding Next.js component  
-- No manual frontend development required  
+## Deploy on Vercel
 
-Visual Builder (Inside TYPO3)
-- Drag & drop content layout  
-- Build pages visually  
-- Headless-ready output  
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Backend-Controlled Components
-- Manage component templates directly in TYPO3 backend  
-- Update UI without touching frontend codebase  
-
-Frontend Stack Options
-- Next.js support  
-- Tailwind CSS or Bootstrap  
-
-All-in-One System
-- Header / Footer management  
-- Logo & branding  
-- Menu builder  
-- Multi-language support  
-
-TYPO3 Compatibility
-- TYPO3 v13.x  
-- TYPO3 v14.x  
-
----
-
-
-Getting Started
-
-1. Install Frontend Package
-- clone package https://github.com/milancrayon/t3headless-frontend 
-
-2. Connect TYPO3
-- Set API_LICENSE_KEY and API_KEY in config.js (or environment variables)
-
-3. Setup t3headless 
-- Setup use command : "yarn setup" / "npm run setup"
-
-4. Theme config & Element generate by  
-- Theme change :  "yarn themebuild" / "npm run themebuild"
-
-5. Start Building
-- Build package : "yarn build" / "npm run build"
-
-6. Serve package
-- Start package : "yarn start" / "npm run start"
----
-
-Developer Flexibility
-
-- Override generated components  
-- Customize templates  
-- Extend frontend logic  
-
----
-
-Use Cases
-
-- Corporate websites  
-- SaaS platforms  
-- Content-heavy portals  
-- Multi-language websites  
-
----
-
-Philosophy
-
-Content should drive the frontend.
-
----
-
-License
-
-T3Headless Proprietary License v1.0 (see LICENSE)
-
----
-
-Links
-
-Documentation: https://document.t3elements.com/  
-Website: https://t3headless.com  
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
