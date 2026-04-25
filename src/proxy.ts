@@ -40,7 +40,7 @@ async function getConfig() {
     }
 }
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     if (
@@ -58,6 +58,9 @@ export async function proxy(request: NextRequest) {
     }
 
     const languages = configData.langmenu.langm;
+    if (!Array.isArray(languages) || languages.length === 0) {
+        return NextResponse.next();
+    }
     const defaultLocale = languages[0].twoLetterIsoCode;
 
     if (request.cookies.get(AUTO_DETECT_COOKIE)) {
