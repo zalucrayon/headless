@@ -1,0 +1,71 @@
+/* ===== Scroll To Top Modern FAB ===== */
+
+.btn{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  background: rgba(20,20,20,.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+  opacity: 0;
+  transform: translateY(20px) scale(.9);
+  pointer-events: none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+/* visible state */
+.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.btn:hover{
+  background: rgba(0,0,0,.9);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.btn:active{
+  transform: scale(.92);
+}
+
+@media (max-width:768px){
+  .btn{
+    width:46px;
+    height:46px;
+    font-size:20px;
+    right:16px;
+    bottom:16px;
+  }
+}

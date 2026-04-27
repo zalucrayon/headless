@@ -1,0 +1,165 @@
+/* ===== NAVBAR LAYOUT ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* MOBILE TOGGLE */
+.mobileToggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* MENU WRAPPER */
+.menuWrapper {
+  display: flex;
+}
+
+.mainMenu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuItem a {
+  text-decoration: none;
+  padding: 14px 0;
+  display: block;
+}
+
+/* ===== SUBMENU ===== */
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: none;
+}
+
+.submenu.show {
+  display: block;
+}
+
+.submenu li {
+  padding: 10px 16px;
+}
+
+.submenu li:hover {
+  background: #f5f5f5;
+}
+
+/* LEVEL 2 */
+.level2 {
+  left: 100%;
+  top: 0;
+}
+
+/* ===== LANGUAGE ===== */
+
+.langWrapper {
+  position: relative;
+}
+
+.langWrapper button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.langDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  min-width: 160px;
+  display: none;
+}
+
+.langDropdown.show {
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 1024px) {
+
+  .mobileToggle {
+    display: block;
+  }
+
+  .menuWrapper {
+    display: none;
+    width: 100%;
+  }
+
+  .menuWrapper.open {
+    display: block;
+  }
+
+  .mainMenu {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .submenu {
+    position: static;
+    border: none;
+  }
+
+  .level2 {
+    position: static;
+  }
+}
+.langWrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.langDropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  min-width: 140px;
+  display: none;
+  z-index: 99;
+}
+
+.langDropdown.show {
+  display: block;
+}
+
+.langItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.langItem:hover {
+  background: #f5f5f5;
+}

@@ -1,0 +1,40 @@
+/* ===== Universal Text List Style ===== */
+
+.list{
+  margin: 0;
+  padding-left: 22px;
+}
+
+/* unordered */
+.ul{
+  list-style-type: disc;
+}
+
+/* ordered */
+.ol{
+  list-style-type: decimal;
+}
+
+/* definition */
+.dl{
+  list-style: none;
+  padding-left: 0;
+}
+
+.li{
+  margin: 6px 0;
+  line-height: 1.65;
+}
+
+/* dt style */
+.dt{
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* responsive typography */
+@media (max-width:768px){
+  .li{
+    margin: 5px 0;
+  }
+}

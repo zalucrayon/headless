@@ -1,0 +1,31 @@
+.frame {
+    position: relative;
+}
+
+.withFrame {
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+}
+
+/* BEFORE spacing */
+.spaceBeforeExtraSmall { margin-top: 20px; }
+.spaceBeforeSmall { margin-top: 40px; }
+.spaceBeforeMedium { margin-top: 60px; }
+.spaceBeforeLarge { margin-top: 80px; }
+.spaceBeforeExtraLarge { margin-top: 120px; }
+
+/* AFTER spacing */
+.spaceAfterExtraSmall { margin-bottom: 20px; }
+.spaceAfterSmall { margin-bottom: 40px; }
+.spaceAfterMedium { margin-bottom: 60px; }
+.spaceAfterLarge { margin-bottom: 80px; }
+.spaceAfterExtraLarge { margin-bottom: 120px; }
+
+ 
+.toTop {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
