@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "setup": "npm install && node setup-theme.js",
+    "setup": "node setup-theme.js",
     "themebuild": "node themebuilder.js",
     "postinstall": "node setup-theme.js"
   },
