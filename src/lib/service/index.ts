@@ -1,12 +1,12 @@
 const requestHeaders: HeadersInit = new Headers();
+export const dummy = true;
 
-  
 export const submitForm = async (_data: any) => {
     let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formsubmit';
     return await fetch(_url, {
         method: 'POST',
         body: JSON.stringify(_data),
-        headers: requestHeaders, 
+        headers: requestHeaders,
         mode: "no-cors",
     }).then((response) => {
 
@@ -18,7 +18,7 @@ export const submitForm = async (_data: any) => {
     }).catch((error) => {
         return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" }
     })
-};  
+};
 
 export const fileUpload = async (_data: any) => {
     let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formupload';
@@ -37,11 +37,11 @@ export const fileUpload = async (_data: any) => {
         return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" }
     })
 };
- 
-export const getPageComponents = async (_id:any,l:any,newsid:any=null,searchparams:any =null) => {
-    let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'edata'; 
-    const _params = new URLSearchParams(searchparams); 
-    if(newsid){
+
+export const getPageComponents = async (_id: any, l: any, newsid: any = null, searchparams: any = null) => {
+    let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'edata';
+    const _params = new URLSearchParams(searchparams);
+    if (newsid) {
         _params.set("newsid", newsid);
     }
     _params.set("uid", _id);

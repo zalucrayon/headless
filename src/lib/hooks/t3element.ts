@@ -1,3 +1,4 @@
+export const dummy = true;
 export const t3element = [
     'header',
     'text',
@@ -62,18 +63,18 @@ export const formErrors = [
     { code: 1238108068, identifier: "StringLength", msg: "The length of the given string is less than %s characters." },
     { code: 1238108069, identifier: "StringLength", msg: "The length of the given string exceeded %s characters." },
 ];
- 
- 
+
+
 export const getElementData = async (data: any, config: any, element: any) => {
     return data;
-};  
-      
+};
+
 export const getFormDefination = (eid: any, config: any) => {
-    if(eid){
+    if (eid) {
         let _formdata = eid?.form;
         let _stpes: any = _formdata?.renderables;
         let _objfrile: any = new Object();
-        if (_stpes?.length > 0) { 
+        if (_stpes?.length > 0) {
             _stpes?.map((_stp: any) => {
                 if (_stp.type == "Page") {
                     _stp?.renderables?.map(async (_fld: any) => {
@@ -98,7 +99,7 @@ export const getFormDefination = (eid: any, config: any) => {
                                         if (_val?.alpha2IsoCode == _fld?.properties?.onlyCountries[_itm]) {
                                             _sorted.push(_val);
                                         }
-                                    }) 
+                                    })
                                 });
                             }
                             if (_fld?.properties?.excludeCountries) {
@@ -110,7 +111,7 @@ export const getFormDefination = (eid: any, config: any) => {
                                                 _sorted.push(_val);
                                             }
                                         }
-                                    }) 
+                                    })
                                 });
                             }
                             let __sval = _Cntr;
@@ -124,13 +125,13 @@ export const getFormDefination = (eid: any, config: any) => {
                                         if (_val?.alpha2IsoCode == _fld?.properties?.prioritizedCountries[_itm]) {
                                             _final.push(_val);
                                         }
-                                    }) 
+                                    })
                                 });
                                 __sval?.map((_val: any, i: any) => {
                                     if (!_fld?.properties?.prioritizedCountries.includes(_val?.alpha2IsoCode)) {
                                         _final.push(_val);
                                     }
-                                }) 
+                                })
                             }
                             if (_final?.length > 0) {
                                 eid.countries = _final;
@@ -143,10 +144,9 @@ export const getFormDefination = (eid: any, config: any) => {
             })
         }
         eid.initialValues = _objfrile;
-        return eid; 
-    }else{
+        return eid;
+    } else {
         return eid;
     }
-};   
+};
 
- 
