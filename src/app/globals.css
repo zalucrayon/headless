@@ -1,0 +1,70 @@
+.sgtt-btn{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+  transition: all .25s ease;
+}
+
+.sgtt-btn:hover{
+  transform: translateY(-4px) scale(1.08);
+  background: #000;
+}
+
+.sgtt-btn:active{
+  transform: scale(.95);
+} 
+.enf-wrapper {
+    text-align: center;
+    background-color: #ffc107;
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: initial;
+}
+
+.swiper-pagination {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  margin-right: 7px;
+}
+
+.swiper-pagination-bullet-active .dot {
+  background-color: black !important;
+}
+ 
