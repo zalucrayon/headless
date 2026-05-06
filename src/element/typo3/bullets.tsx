@@ -3,7 +3,7 @@ import styles from "./styles/bullets.module.css";
 export default function Text({ data, element }: any) {
 
     const list = data?.bodytext?.split('\r\n');
-
+    console.log("file call");
     let Tag: any = null;
     let Item: any = null;
     let className = "";

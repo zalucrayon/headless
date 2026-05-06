@@ -25,7 +25,7 @@ export default async function Textmedia({ data, element, config }: any) {
     const images = data?.assets || [];
     const layout = resolveLayout(data?.imageorient);
     const cols = data?.imagecols || 1;
-
+    console.log("file call");
     const renderMedia = () => (
         <div className={`${styles.gallery} ${styles["col-" + cols]}`}>
             {images.map((file: any, i: number) => (

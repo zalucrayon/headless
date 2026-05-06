@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
             ? [slugParam]
             : [];
     const currentUrl = '/' + slugdata.join('/');
-
+    console.log("file call");
     let pdata = config?.pages?.find((pg: any) => {
         if (pg?.slugurl != "/") {
             return pg?.slugurl?.replace(/\/+$/, "") === currentUrl;

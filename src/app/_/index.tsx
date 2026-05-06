@@ -3,7 +3,7 @@ import { t3element } from "@/lib/hooks/t3element";
 import React from "react";
 
 export const renderElement = (data: any, config: any, _key: any = "") => {
-
+    console.log("file call");
     return (
         t3element.includes(data?.CType) ?
             <section key={data.crdate + 'containertypodefault' + data?.CType + _key} >
@@ -24,9 +24,9 @@ export const loadComponent = (type: any, data: any, element: any = null, config:
     const LazyComponent = React.lazy(() => import("../../element/" + type).catch((e) => ({
         default: () =>
             <div className="enf-wrapper">
-                 <p>
+                <p>
                     <strong>{type}</strong>&nbsp;
-                    component is missing!! <br/>please run command "yarn themebuild" on your root directory
+                    component is missing!! <br />please run command "yarn themebuild" on your root directory
                 </p>
             </div>
     })));

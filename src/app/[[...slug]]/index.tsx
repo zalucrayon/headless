@@ -13,7 +13,7 @@ export const loadComponent = (type: any, data: any, element: any = null) => {
             <div className="enf-wrapper">
                 <p>
                     <strong>{type}</strong>&nbsp;
-                    component is missing!! <br/>please run command "yarn themebuild" on your root directory
+                    component is missing!! <br />please run command "yarn themebuild" on your root directory
                 </p>
             </div>
     })));
@@ -24,6 +24,7 @@ export const loadComponent = (type: any, data: any, element: any = null) => {
     );
 }
 
+console.log("file call");
 export const renderElement = (elements: any, col: any) => {
     return (
         elements?.map((ttcn: any, k: any) => (
@@ -47,9 +48,9 @@ export default async function MainPageData({ pdata, blog = null, searchParams }:
     const resolvedSearchParams = await searchParams;
     let pageData = await getPageComponents(pdata?.uid, pdata?.sys_language_uid, blog?.uid, resolvedSearchParams);
     let _elementsData = pageData?.data;
-    
+
     // console.log(pageData);
-    
+
     return (
         <div className="page-data">
             {pdata.backend_layout == "" || pdata.backend_layout == '-1' || pdata.backend_layout == 'pagets__default' ?

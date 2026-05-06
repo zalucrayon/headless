@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ImageModal({ immg }: any) {
     const [show, setModal] = useState(false);
-
+    console.log("file call");
     return (
         <>
             <div className="image-icon" onClick={() => setModal(true)}>

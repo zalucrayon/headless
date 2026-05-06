@@ -7,7 +7,7 @@ import Head from "next/head";
 export default function HeadCload() {
     const config = useConfig();
     const [loadjs, setLoadjs] = useState(false);
-
+    console.log("file call");
     useEffect(() => {
         const head = document.querySelector("head");
         let s: any = document.createElement('link');

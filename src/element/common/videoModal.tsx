@@ -5,15 +5,15 @@ import styles from "./styles/videomodal.module.css";
 
 export default function VideoModal({ url }: any) {
     const [show, setModal] = useState(false);
-
+    console.log("file call");
     return (
-        <> 
+        <>
             {!show &&
                 <div className={styles.videoBtnWrap} onClick={() => setModal(true)}>
                     <div className={styles.videoBtn}>▶</div>
                 </div>
             }
- 
+
             {show &&
                 <div className={styles.modal}>
                     <div className={styles.overlay} onClick={() => setModal(false)} />

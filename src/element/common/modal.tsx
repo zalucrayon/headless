@@ -25,7 +25,7 @@ export default function Modal({
   className = "",
   closeOnOutside = true
 }: ModalProps) {
-
+  console.log("file call");
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();

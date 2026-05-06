@@ -66,6 +66,7 @@ export const formErrors = [
 
 
 export const getElementData = async (data: any, config: any, element: any) => {
+    console.log("file call");
     return data;
 };
 

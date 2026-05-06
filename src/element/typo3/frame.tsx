@@ -8,7 +8,7 @@ export default function Frame({ data, config, children }: any) {
     const spaceBefore = data?.space_before_class
         ? styles['spaceBefore' + formatClass(data.space_before_class)]
         : '';
-
+    console.log("file call");
     const spaceAfter = data?.space_after_class
         ? styles['spaceAfter' + formatClass(data.space_after_class)]
         : '';

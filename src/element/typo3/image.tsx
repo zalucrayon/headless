@@ -1,6 +1,7 @@
 import Nimage from "../common/image";
 
 export default async function image({ data, element, config }: any) {
+    console.log("file call");
     let classname = '';
     let col = 0;
     let _rowclass = '';

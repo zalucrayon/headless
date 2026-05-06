@@ -15,6 +15,7 @@ const renderImage = (
   className: any,
   props: any
 ) => {
+  console.log("file call");
   return (
     <Image
       src={_path}
@@ -51,17 +52,17 @@ export default function Nimage({ immg, data, className, ...props }: any) {
   );
 
   return (
-    <> 
+    <>
       {immg?.link ? (
         <Link href={immg.link}>{image}</Link>
       ) : (
         image
       )}
- 
+
       {immg?.description && (
         <p className={styles.caption}>{immg.description}</p>
       )}
- 
+
       <Modal
         show={_imgzoom}
         title={immg?.title}
@@ -72,8 +73,8 @@ export default function Nimage({ immg, data, className, ...props }: any) {
           {renderImage(
             immg.url,
             immg,
-            { ...data, image_zoom: false },  
-            () => {},
+            { ...data, image_zoom: false },
+            () => { },
             immg.width,
             immg.height,
             "",

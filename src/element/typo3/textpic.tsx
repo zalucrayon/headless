@@ -21,6 +21,7 @@ export default async function TextPic({ data, element, config }: any) {
     const images = data?.image || [];
     const layout = resolveLayout(data?.imageorient);
     const cols = data?.imagecols || 1;
+    console.log("file call");
 
     const renderImages = () => (
         <div className={`${styles.gallery} ${styles["col-" + cols]}`}>

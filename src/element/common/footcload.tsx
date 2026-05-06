@@ -6,7 +6,7 @@ import { useConfig } from "./ConfigProvider";
 export default function FootCload() {
     const config = useConfig();
     const [footerjs, setFooterjs] = useState(false);
-
+    console.log("file call");
     useEffect(() => {
         if (config?.footer?.footer_i_js) {
             if (typeof window !== "undefined") {

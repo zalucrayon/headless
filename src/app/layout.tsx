@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const NEXT_PUBLIC_SERVER = process.env.NEXT_PUBLIC_SERVER;
   const NEXT_PUBLIC_API_BASE = process.env.NEXT_PUBLIC_API_BASE;
   const config = await getBaseInfo();
-
+  console.log("file call");
   return (
     <html lang="en">
       <body >

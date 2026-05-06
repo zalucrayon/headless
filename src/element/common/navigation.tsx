@@ -14,7 +14,7 @@ export default function Navigation() {
   const [activlang, setActivelang] = useState<any>(null);
   const [currentMenu, setcurrentMenu] = useState<any>(null);
   const url = usePathname();
-
+  console.log("file call");
   const langchange = async (e: any, lang: any) => {
     setLMenuOpen(false);
     config.activelang = lang;
@@ -116,7 +116,7 @@ export default function Navigation() {
   return (
     <>
       <div  >
-        <button data-collapse-toggle="mobile-menu-2" type="button"  aria-controls="mobile-menu-2" aria-expanded="false" onClick={(e) => setMenuOpen(!mmenuopen)}>
+        <button data-collapse-toggle="mobile-menu-2" type="button" aria-controls="mobile-menu-2" aria-expanded="false" onClick={(e) => setMenuOpen(!mmenuopen)}>
           <span className="sr-only">Open main menu</span>
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
           <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
@@ -128,7 +128,7 @@ export default function Navigation() {
             {currentMenu?.map((menu: any, k: any) => (
               menu?.detail?.slug ?
                 <li key={menu?.uid + k + k + menu?.detail?.title + new Date().getTime()} className={menu?.child?.length > 0 ? 'child relative ' : ''}>
-                  <Link 
+                  <Link
                     aria-label={menu?.detail?.slugurl}
                     href={menu?.detail?.slugurl}>
                     <span>{menu?.detail?.nav_title !== '' ? menu?.detail?.nav_title : menu?.detail?.title}</span>
@@ -148,7 +148,7 @@ export default function Navigation() {
                         <li key={menu?.uid + i + menu?.detail?.title + new Date().getTime() + child?.uid} className={child?.child?.length > 0 ? "children  chilld relative" : "children "}>
                           {child?.detail?.slug ?
                             <Link
-                               
+
                               aria-label={child?.detail?.slugurl}
                               href={child?.detail?.slugurl}  >
                               <span>{child?.detail?.nav_title !== '' ? child?.detail?.nav_title : child?.detail?.title}</span>
@@ -166,7 +166,7 @@ export default function Navigation() {
                                 <li key={i + child?.uid + index + _child?.uid + _child?.detail?.title + new Date().getTime() + _child?.uid} >
                                   {_child?.detail?.slug ?
                                     <Link
-                                      
+
                                       aria-label={_child?.detail?.slugurl}
                                       href={_child?.detail?.slugurl} >
                                       <span>{_child?.detail?.nav_title !== '' ? _child?.detail?.nav_title : _child?.detail?.title}</span></Link>
@@ -200,7 +200,7 @@ export default function Navigation() {
                       alt={"active" + activlang?.navigationTitle}
                       width={32}
                       height={32}
-                      
+
                     />
                   </span>
                   : config?.langmenu?.pattern == "title_flag" ?
@@ -215,7 +215,7 @@ export default function Navigation() {
                           alt={"active" + activlang?.navigationTitle}
                           width={32}
                           height={32}
-                          
+
                         />
                       </span>
                     </span>
@@ -229,7 +229,7 @@ export default function Navigation() {
                             alt={"active" + activlang?.navigationTitle}
                             width={32}
                             height={32}
-                            
+
                           />
                         </span>
                         <span  >{activlang?.navigationTitle ? activlang?.navigationTitle : activlang?.title}</span>
@@ -237,7 +237,7 @@ export default function Navigation() {
                       : <span  >{activlang?.navigationTitle ? activlang?.navigationTitle : activlang?.title}</span>
                 }
                 {
-                 config?.langmenu?.langm?.length > 1 ?
+                  config?.langmenu?.langm?.length > 1 ?
                     <svg className={`w-2.5 h-2.5 ms-3 ${lmmenuopen ? 'rotate-180' : ''}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"
                       onClick={(e) => setLMenuOpen(!lmmenuopen)}>
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
@@ -247,7 +247,7 @@ export default function Navigation() {
               </button>
               : <div  >Loading...</div>}
             {
-             config?.langmenu?.langm?.length > 1 ?
+              config?.langmenu?.langm?.length > 1 ?
                 <ul  >
                   {config?.langmenu?.langm?.map((_mn: any, index: any) => (
                     activlang?.uid !== _mn?.languageId ?

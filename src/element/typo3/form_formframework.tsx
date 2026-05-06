@@ -14,6 +14,7 @@ import { isGeneratorFunction } from 'util/types';
 export default function Tforms({ data }: any) {
     const config = useConfig();
     data = getFormDefination(data, config);
+    console.log("file call");
     let _fdata: any = data?.form;
     let _stpes: any = _fdata?.renderables;
     let [visiblestep, SetVisible] = useState(0);
@@ -857,11 +858,11 @@ export default function Tforms({ data }: any) {
         let _resp = await submitForm(_findl);
     }
 
-    const redirecttoPage = async (_pid: any) => { 
+    const redirecttoPage = async (_pid: any) => {
         let _pagedata = config?.pages?.find((pg: any) => {
             return pg?.uid == _pid;
         });
-        if(_pagedata){  
+        if (_pagedata) {
             push(_pagedata?.slugurl);
         }
     }
@@ -925,7 +926,7 @@ export default function Tforms({ data }: any) {
     const renderFields = (_ctep: any, index: any) => {
         return (
             _ctep?.renderables?.map((_fld: any, _i: any) => (
-                <div key={_fld?.identifier + index + _ctep?.identifier + _i} className={`form-group mb-4 ${_ctep?.type == "GridRow" ? 'col flex-auto px-[15px]' : _ctep?.type == "GridColumn" ?"row" :""}`}>
+                <div key={_fld?.identifier + index + _ctep?.identifier + _i} className={`form-group mb-4 ${_ctep?.type == "GridRow" ? 'col flex-auto px-[15px]' : _ctep?.type == "GridColumn" ? "row" : ""}`}>
                     {_fld?.type != "Checkbox" && _fld?.type != "Hidden" && _fld?.type != "StaticText" && _fld?.type != "ContentElement" && _fld?.type != "Fieldset" && _fld?.type != "DatePicker" ?
                         <label htmlFor={_fld?.identifier} className='block text-sm font-medium leading-6  font-[400] text-gray-900 mb-2'>
                             {_fld?.label}
@@ -1302,8 +1303,8 @@ export default function Tforms({ data }: any) {
                                             {_stpes?.map((_ctep: any, index: any) => (
                                                 _ctep?.type == "Page" ?
                                                     _ctep?.renderables?.map((_fld: any, index: any) => (
-                                                        _fld?.type != "GridRow" && 
-                                                        _fld?.type != "GridColumn" && _fld?.type != "Fieldset" && _fld?.type != "Hidden" && _fld?.type != "StaticText" && _fld?.type != "ContentElement" && _fld?.type != "DatePicker" && _fld?.type != "FileUpload" && _fld?.type != "ImageUpload" && _fld?.type != "AdvancedPassword" ?
+                                                        _fld?.type != "GridRow" &&
+                                                            _fld?.type != "GridColumn" && _fld?.type != "Fieldset" && _fld?.type != "Hidden" && _fld?.type != "StaticText" && _fld?.type != "ContentElement" && _fld?.type != "DatePicker" && _fld?.type != "FileUpload" && _fld?.type != "ImageUpload" && _fld?.type != "AdvancedPassword" ?
                                                             <div key={_fld?.identifier + index + _ctep?.identifier + index} className='row'>
                                                                 <div className='col'>{_fld?.label}</div>
                                                                 <div className='col'>{formik.values[_fld?.identifier]}</div>

@@ -1,3 +1,4 @@
-export default function header({ data, element }: any) { 
+export default function header({ data, element }: any) {
+    console.log("file call");
     return (<></>)
 }

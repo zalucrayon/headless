@@ -1,4 +1,5 @@
 export default function tablet3({ data, element }: any) {
+    console.log("file call");
     const delimter = data?.table_delimiter;
     const enclosure = data?.table_enclosure;
     const table_class = data?.table_class ? " table-" + data?.table_class : null;

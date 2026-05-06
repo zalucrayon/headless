@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 
 export default function Nvideo({ data, immg, config }: any) {
     const [_path, setPPath] = useState<any>(null);
-
+    console.log("file call");
     const changepath = (immg: any, data: any) => {
         setPPath(immg?.url);
     }
@@ -26,7 +26,7 @@ export default function Nvideo({ data, immg, config }: any) {
         }
         if (immg?.extension === "youtube") {
             youtubeurlset(immg);
-        } 
+        }
     }, [immg]);
 
     return (

@@ -8,7 +8,7 @@ function sortFiles(files: any[], sortBy: string, direction: string) {
     if (!files?.length) return files;
 
     const dir = direction === 'desc' ? -1 : 1;
-
+    console.log("file call");
     const getValue = (f: any) => {
         switch (sortBy) {
             case 'creation_date': return new Date(f?.creation);
@@ -75,7 +75,7 @@ export default async function Uploads({ data, element, config }: any) {
                             />
                         </div>
                     ) : null}
- 
+
                     <div className={styles.content}>
                         <Link href={file?.url} target={data?.target} className={styles.title}>
                             {file?.title || file?.name}
