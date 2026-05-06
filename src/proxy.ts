@@ -12,6 +12,8 @@ function getBrowserLocale(
     languages: any[],
     defaultLocale: string
 ) {
+
+
     const acceptLanguage = request.headers.get("accept-language");
     if (!acceptLanguage) return defaultLocale;
 
