@@ -1,0 +1,71 @@
+/* ===== Wrapper ===== */
+.wrapper{
+  width: 100%;
+}
+
+/* width variations */
+.full{
+  width: 100%;
+}
+
+.max{
+  width: max-content;
+}
+
+/* ===== Alignment ===== */
+.left{
+  text-align: left;
+}
+
+.center{
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+/* ===== Layout orientation ===== */
+.intextRight{
+  display: block;
+}
+
+.intextLeft{
+  display: block;
+}
+
+.besideRight{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.besideLeft{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ===== Typography ===== */
+.title{
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.subtitle{
+  margin-top: 6px;
+  opacity: .75;
+  font-weight: 500;
+}
+
+/* responsive */
+@media (max-width:768px){
+  .besideRight,
+  .besideLeft{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

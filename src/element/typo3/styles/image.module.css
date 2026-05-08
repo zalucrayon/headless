@@ -1,0 +1,42 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center { justify-content: center; text-align: center; }
+.start { justify-content: flex-start; text-align: left; }
+.end { justify-content: flex-end; text-align: right; }
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.column {
+    position: relative;
+    padding: 5px;
+}
+
+.autoWidth img { width: auto; }
+.autoHeight img { height: auto; }
+
+/* TYPO3 imagecols mapping */
+.col1 .column { width: 100%; }
+.col2 .column { width: 50%; }
+.col3 .column { width: 33.333%; }
+.col4 .column { width: 25%; }
+.col5 .column { width: 20%; }
+.col6 .column { width: 16.666%; }
+.col7 .column { width: 14.285%; }
+.col8 .column { width: 12.5%; }
+
+/* responsive */
+@media (max-width: 768px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    .column {
+        width: 100% !important;
+    }
+}

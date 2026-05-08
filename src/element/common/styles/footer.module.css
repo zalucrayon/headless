@@ -1,0 +1,48 @@
+.footer {
+  width: 100%;
+  position: relative;
+}
+
+/* COPYRIGHT */
+.copyWrap {
+  border-top: 1px solid #dee2e6;
+  margin-top: 32px;
+  padding: 22px 16px;
+}
+
+.copyText {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* SCROLL TOP BUTTON */
+.scrollTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #212529;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all .25s ease;
+}
+
+.scrollTop:hover {
+  background: #000;
+  transform: translateY(-3px);
+}
+
+/* visible state (JS will toggle) */
+.show {
+  display: flex;
+}
