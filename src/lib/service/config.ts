@@ -4,7 +4,7 @@ export async function getBaseInfo() {
   try {
     console.log("file call");
     if (CONFIG) return CONFIG;
-    let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'config';
+    const _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'config';
     const res = await fetch(_url);
     if (!res.ok) {
       CONFIG = { "error": "Failed to fetch Data !" }

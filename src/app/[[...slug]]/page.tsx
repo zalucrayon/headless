@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
             : [];
     const currentUrl = '/' + slugdata.join('/');
     console.log("file call");
-    let pdata = config?.pages?.find((pg: any) => {
+    const pdata = config?.pages?.find((pg: any) => {
         if (pg?.slugurl != "/") {
             return pg?.slugurl?.replace(/\/+$/, "") === currentUrl;
         } else {
@@ -59,7 +59,7 @@ export default async function MainPage({ params, searchParams }: {
     searchParams: { [key: string]: string | string[] | undefined };
 }) {
     const config = await getBaseInfo();
-    let p404 = null;
+    const p404 = null;
     const { slug } = await params;
     const slugParam = slug;
     const slugdata = Array.isArray(slugParam)
@@ -79,13 +79,13 @@ export default async function MainPage({ params, searchParams }: {
     });
 
     if (!pdata) {
-        let __bid = currentUrl.split('/').filter(Boolean).pop();
+        const __bid = currentUrl.split('/').filter(Boolean).pop();
         _blog = config?.news?.find((ns: any) => {
             return ns?.path_segment == __bid;
         });
 
         if (__bid) {
-            let _withoutblog = currentUrl.replace(__bid, "");
+            const _withoutblog = currentUrl.replace(__bid, "");
             pdata = config?.pages?.find((pg: any) => {
                 if (pg?.slugurl?.replace(/\/+$/, "") != "") {
                     return pg?.slugurl?.replace(/\/+$/, "") === _withoutblog.replace(/\/+$/, "");

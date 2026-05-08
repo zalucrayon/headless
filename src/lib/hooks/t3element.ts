@@ -72,9 +72,9 @@ export const getElementData = async (data: any, config: any, element: any) => {
 
 export const getFormDefination = (eid: any, config: any) => {
     if (eid) {
-        let _formdata = eid?.form;
-        let _stpes: any = _formdata?.renderables;
-        let _objfrile: any = new Object();
+        const _formdata = eid?.form;
+        const _stpes: any = _formdata?.renderables;
+        const _objfrile: any = new Object();
         if (_stpes?.length > 0) {
             _stpes?.map((_stp: any) => {
                 if (_stp.type == "Page") {
@@ -93,7 +93,7 @@ export const getFormDefination = (eid: any, config: any) => {
                         if (_fld?.type == "CountrySelect") {
                             let _Cntr: any = config?.countries;
                             _Cntr = Object.values(_Cntr);
-                            let _sorted: any = [];
+                            const _sorted: any = [];
                             if (_fld?.properties?.onlyCountries) {
                                 Object.keys(_fld?.properties?.onlyCountries).map(async (_itm: any) => {
                                     _Cntr.map((_val: any, i: any) => {
@@ -119,7 +119,7 @@ export const getFormDefination = (eid: any, config: any) => {
                             if (_sorted?.length > 0) {
                                 __sval = _sorted;
                             }
-                            let _final: any = [];
+                            const _final: any = [];
                             if (_fld?.properties?.prioritizedCountries) {
                                 Object.keys(_fld?.properties?.prioritizedCountries).map((_itm: any) => {
                                     __sval?.map((_val: any, i: any) => {

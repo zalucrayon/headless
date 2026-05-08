@@ -46,8 +46,8 @@ export const renderElement = (elements: any, col: any) => {
 
 export default async function MainPageData({ pdata, blog = null, searchParams }: any) {
     const resolvedSearchParams = await searchParams;
-    let pageData = await getPageComponents(pdata?.uid, pdata?.sys_language_uid, blog?.uid, resolvedSearchParams);
-    let _elementsData = pageData?.data;
+    const pageData = await getPageComponents(pdata?.uid, pdata?.sys_language_uid, blog?.uid, resolvedSearchParams);
+    const _elementsData = pageData?.data;
 
     // console.log(pageData);
 

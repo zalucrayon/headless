@@ -9,7 +9,7 @@ export default function Nvideo({ data, immg, config }: any) {
         setPPath(immg?.url);
     }
     const youtubeurlset = async (immg: any) => {
-        let _youtube = "https://www.youtube.com/embed/" + immg?.youtube;
+        const _youtube = "https://www.youtube.com/embed/" + immg?.youtube;
         setPPath(_youtube);
     }
     useEffect(() => {

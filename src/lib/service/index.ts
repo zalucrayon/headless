@@ -2,7 +2,7 @@ const requestHeaders: HeadersInit = new Headers();
 export const dummy = true;
 
 export const submitForm = async (_data: any) => {
-    let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formsubmit';
+    const _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formsubmit';
     return await fetch(_url, {
         method: 'POST',
         body: JSON.stringify(_data),
@@ -21,7 +21,7 @@ export const submitForm = async (_data: any) => {
 
 
 export const fileUpload = async (_data: any) => {
-    let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formupload';
+    const _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formupload';
     return await fetch(_url, {
         method: 'POST',
         headers: requestHeaders,

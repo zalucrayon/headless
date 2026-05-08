@@ -40,13 +40,13 @@ export default async function image({ data, element, config }: any) {
         classname = classname + " col-12-8";
         col = 8;
     }
-    let _data: any = new Object();
+    const _data: any = new Object();
     _data['eid'] = data.uid;
     _data['field'] = 'image';
     _data['table'] = 'tt_content';
-    let __data: any = [];
+    const __data: any = [];
     __data.push(_data);
-    let _image: any = data?.image;
+    const _image: any = data?.image;
     return (
         <>
             <div className={`flex flex-wrap ${_rowclass} image_gallery`}>

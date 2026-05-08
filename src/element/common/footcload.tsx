@@ -12,8 +12,8 @@ export default function FootCload() {
             if (typeof window !== "undefined") {
                 if (!footerjs) {
                     const footer = document.querySelector("body");
-                    let s: any = document.createElement('script');
-                    let _ex: any = document.getElementById('extra_fi_js');
+                    const s: any = document.createElement('script');
+                    const _ex: any = document.getElementById('extra_fi_js');
                     if (!_ex) {
                         s.type = 'text/javascript';
                         s.async = true;

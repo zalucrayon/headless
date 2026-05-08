@@ -10,8 +10,8 @@ export default function HeadCload() {
     console.log("file call");
     useEffect(() => {
         const head = document.querySelector("head");
-        let s: any = document.createElement('link');
-        let _ex: any = document.getElementById('_cs');
+        const s: any = document.createElement('link');
+        const _ex: any = document.getElementById('_cs');
         if (!_ex) {
             s.type = 'text/css';
             s.async = true;

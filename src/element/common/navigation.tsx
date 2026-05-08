@@ -71,13 +71,13 @@ export default function Navigation() {
       const lng = _lm?.path?.split('/')[1];
       return lng === url_language;
     });
-    let _m = matchedLang || null;
+    const _m = matchedLang || null;
     if (_m) {
-      let _furl = url.replace(_m.path.replace(/\/$/, ''), "");
-      let _pagedata = config?.pages?.find((pg: any) => {
+      const _furl = url.replace(_m.path.replace(/\/$/, ''), "");
+      const _pagedata = config?.pages?.find((pg: any) => {
         return pg?.slug === _furl;
       });
-      let oid = _pagedata?.l10n_parent;
+      const oid = _pagedata?.l10n_parent;
       let _fdat = null;
       if (_mn?.uid == 0) {
         _fdat = config?.pages?.find((pg: any) => {
@@ -94,10 +94,10 @@ export default function Navigation() {
         return _mn?.path;
       }
     } else {
-      let _pagedata = config?.pages?.find((pg: any) => {
+      const _pagedata = config?.pages?.find((pg: any) => {
         return pg?.slug === url;
       });
-      let _fdat = config?.pages?.find((pg: any) => {
+      const _fdat = config?.pages?.find((pg: any) => {
         return pg?.l10n_parent === _pagedata?.uid && pg?.sys_language_uid === _mn?.uid;
       });
       if (_fdat) {
