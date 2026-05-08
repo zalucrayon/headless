@@ -333,10 +333,14 @@ export default function Tforms({ data }: any) {
 
                                             _validation[__fld?.identifier] = Yup.mixed<File>().test("fileFormat", "Unsupported File Format", (value: any) => {
                                                 if (value) {
-                                                    return (
-                                                        validFileExtensions.includes(value.type)
+                                                    const extension = value.name.split('.').pop()?.toLowerCase();
+                                                    const isMimeValid = validFileExtensions.includes(value.type);
+                                                    const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                        mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                     );
+                                                    return isMimeValid && isExtensionValid;
                                                 }
+                                                return true;
                                             }).test("file", `The file size between ${minimum} to ${maximum} `, (value: any) => {
                                                 if (value) {
                                                     return (
@@ -347,27 +351,31 @@ export default function Tforms({ data }: any) {
                                         } else {
                                             _validation[__fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                                 if (value) {
-                                                    return (
-                                                        validFileExtensions.includes(value.type)
+                                                    const extension = value.name.split('.').pop()?.toLowerCase();
+                                                    const isMimeValid = validFileExtensions.includes(value.type);
+                                                    const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                        mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                     );
+                                                    return isMimeValid && isExtensionValid;
                                                 } else {
                                                     return true;
                                                 }
-                                            }
-                                            ).required(_rmsg);
+                                            }).required(_rmsg);
                                         }
                                     } else {
                                         if (validFileExtensions?.length > 0) {
                                             _validation[__fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                                 if (value) {
-                                                    return (
-                                                        validFileExtensions.includes(value.type)
+                                                    const extension = value.name.split('.').pop()?.toLowerCase();
+                                                    const isMimeValid = validFileExtensions.includes(value.type);
+                                                    const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                        mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                     );
+                                                    return isMimeValid && isExtensionValid;
                                                 } else {
                                                     return true;
                                                 }
-                                            }
-                                            );
+                                            });
                                         }
                                     }
                                 });
@@ -376,9 +384,12 @@ export default function Tforms({ data }: any) {
                                 if (validFileExtensions?.length > 0) {
                                     _validation[__fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                         if (value) {
-                                            return (
-                                                validFileExtensions.includes(value.type)
+                                            const extension = value.name.split('.').pop()?.toLowerCase();
+                                            const isMimeValid = validFileExtensions.includes(value.type);
+                                            const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                             );
+                                            return isMimeValid && isExtensionValid;
                                         } else {
                                             return true;
                                         }
@@ -649,10 +660,14 @@ export default function Tforms({ data }: any) {
 
                                         _validation[_fld?.identifier] = Yup.mixed<File>().test("fileFormat", "Unsupported File Format", (value: any) => {
                                             if (value) {
-                                                return (
-                                                    validFileExtensions.includes(value.type)
+                                                const extension = value.name.split('.').pop()?.toLowerCase();
+                                                const isMimeValid = validFileExtensions.includes(value.type);
+                                                const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                    mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                 );
+                                                return isMimeValid && isExtensionValid;
                                             }
+                                            return true;
                                         }).test("file", `The file size between ${minimum} to ${maximum} `, (value: any) => {
                                             if (value) {
                                                 return (
@@ -663,27 +678,31 @@ export default function Tforms({ data }: any) {
                                     } else {
                                         _validation[_fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                             if (value) {
-                                                return (
-                                                    validFileExtensions.includes(value.type)
+                                                const extension = value.name.split('.').pop()?.toLowerCase();
+                                                const isMimeValid = validFileExtensions.includes(value.type);
+                                                const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                    mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                 );
+                                                return isMimeValid && isExtensionValid;
                                             } else {
                                                 return true;
                                             }
-                                        }
-                                        ).required(_rmsg);
+                                        }).required(_rmsg);
                                     }
                                 } else {
                                     if (validFileExtensions?.length > 0) {
                                         _validation[_fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                             if (value) {
-                                                return (
-                                                    validFileExtensions.includes(value.type)
+                                                const extension = value.name.split('.').pop()?.toLowerCase();
+                                                const isMimeValid = validFileExtensions.includes(value.type);
+                                                const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                                    mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                                 );
+                                                return isMimeValid && isExtensionValid;
                                             } else {
                                                 return true;
                                             }
-                                        }
-                                        );
+                                        });
                                     }
                                 }
                             });
@@ -692,14 +711,16 @@ export default function Tforms({ data }: any) {
                             if (validFileExtensions?.length > 0) {
                                 _validation[_fld?.identifier] = Yup.mixed().test("fileFormat", "Unsupported File Format", (value: any) => {
                                     if (value) {
-                                        return (
-                                            validFileExtensions.includes(value.type)
+                                        const extension = value.name.split('.').pop()?.toLowerCase();
+                                        const isMimeValid = validFileExtensions.includes(value.type);
+                                        const isExtensionValid = validFileExtensions.some((mime: string) => 
+                                            mime.toLowerCase().includes(extension || "") || (extension === "jpg" && mime.toLowerCase().includes("jpeg"))
                                         );
+                                        return isMimeValid && isExtensionValid;
                                     } else {
                                         return true;
                                     }
-                                }
-                                );
+                                });
                             }
                         }
                     }

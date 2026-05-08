@@ -42,7 +42,32 @@ async function getConfig() {
     }
 }
 
-export async function middleware(request: NextRequest) {
+
+function applySecurityHeaders(response: NextResponse) {
+    response.headers.set('X-DNS-Prefetch-Control', 'on');
+    response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+    response.headers.set('X-Content-Type-Options', 'nosniff');
+    response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
+    response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    const cspHeader = `
+        default-src 'self';
+        script-src 'self' 'unsafe-eval' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' blob: data: ${process.env.NEXT_PUBLIC_SERVER || ''};
+        font-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        upgrade-insecure-requests;
+    `.replace(/\s{2,}/g, ' ').trim();
+
+    response.headers.set('Content-Security-Policy', cspHeader);
+    return response;
+}
+
+export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     if (
@@ -51,22 +76,22 @@ export async function middleware(request: NextRequest) {
         pathname.startsWith("/assets") ||
         pathname.startsWith("/.well-known")
     ) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
     const configData = await getConfig();
     if (!configData?.langmenu?.show_menu || !configData?.pages?.length || !configData?.langmenu?.auto_lang_detect) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
     const languages = configData.langmenu.langm;
     if (!Array.isArray(languages) || languages.length === 0) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
     const defaultLocale = languages[0].twoLetterIsoCode;
 
     if (request.cookies.get(AUTO_DETECT_COOKIE)) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
     const locale = getBrowserLocale(request, languages, defaultLocale);
@@ -75,7 +100,7 @@ export async function middleware(request: NextRequest) {
         (l: { twoLetterIsoCode: string }) => l.twoLetterIsoCode === locale
     );
 
-    if (!language) return NextResponse.next();
+    if (!language) return applySecurityHeaders(NextResponse.next());
 
     const languageId = language.languageId;
 
@@ -84,7 +109,7 @@ export async function middleware(request: NextRequest) {
     );
 
     if (!currentPage) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
     const translatedPage = configData.pages.find(
@@ -94,16 +119,16 @@ export async function middleware(request: NextRequest) {
     );
 
     if (!translatedPage) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
     if (translatedPage.slugurl === pathname) {
-        return NextResponse.next();
+        return applySecurityHeaders(NextResponse.next());
     }
 
-    const response = NextResponse.redirect(
+    const response = applySecurityHeaders(NextResponse.redirect(
         new URL(translatedPage.slugurl, request.url)
-    );
+    ));
 
     response.cookies.set(AUTO_DETECT_COOKIE, "1", {
         path: "/",

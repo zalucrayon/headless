@@ -7,16 +7,15 @@ export const submitForm = async (_data: any) => {
         method: 'POST',
         body: JSON.stringify(_data),
         headers: requestHeaders,
-        mode: "no-cors",
     }).then((response) => {
 
         if (response.status == 200) {
             return response.json()
         } else {
-            return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" };
+            return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." };
         }
     }).catch((error) => {
-        return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" }
+        return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." }
     })
 };
 
@@ -26,15 +25,14 @@ export const fileUpload = async (_data: any) => {
         method: 'POST',
         headers: requestHeaders,
         body: _data,
-        mode: "no-cors",
     }).then((response) => {
         if (response.status == 200) {
             return response.json()
         } else {
-            return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" };
+            return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." };
         }
     }).catch((error) => {
-        return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" }
+        return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." }
     })
 };
 
@@ -56,9 +54,9 @@ export const getPageComponents = async (_id: any, l: any, newsid: any = null, se
         if (response.status == 200) {
             return response.json()
         } else {
-            return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" };
+            return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." };
         }
     }).catch((error) => {
-        return { "errors": process.env.NEXT_PUBLIC_SERVER ? process.env.NEXT_PUBLIC_SERVER + " not working Proper!!" : "Please configure theme in typo3 & run command!!" }
+        return { "errors": "Service unavailable. Please ensure the backend is properly configured or try again later." }
     })
 };

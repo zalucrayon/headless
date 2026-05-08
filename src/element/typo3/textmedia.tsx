@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import Nimage from "../common/image";
 import Nvideo from "../common/nvideo";
 import Cheader from "./cheader";
@@ -42,7 +43,7 @@ export default async function Textmedia({ data, element, config }: any) {
         <div className={styles.text}>
             <Cheader data={data} config={config} />
             {data?.bodytext &&
-                <div dangerouslySetInnerHTML={{ __html: data.bodytext }} />}
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.bodytext) }} />}
         </div>
     );
 

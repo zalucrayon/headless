@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import Nimage from "../common/image";
 import Cheader from "./cheader";
 import styles from "./styles/textpic.module.css";
@@ -37,7 +38,7 @@ export default async function TextPic({ data, element, config }: any) {
         <div className={styles.text}>
             <Cheader data={data} config={config} />
             {data?.bodytext &&
-                <div dangerouslySetInnerHTML={{ __html: data.bodytext }} />}
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.bodytext) }} />}
         </div>
     );
 
