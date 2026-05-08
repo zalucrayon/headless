@@ -19,6 +19,7 @@ export const submitForm = async (_data: any) => {
     })
 };
 
+
 export const fileUpload = async (_data: any) => {
     let _url: any = String(process.env.NEXT_PUBLIC_SERVER) + String(process.env.NEXT_PUBLIC_API_BASE) + 'formupload';
     return await fetch(_url, {
@@ -46,7 +47,6 @@ export const getPageComponents = async (_id: any, l: any, newsid: any = null, se
     _params.set("l", l);
     _url = _url + "?" + _params.toString();
 
-    // console.log(_url);
     return await fetch(_url, {
         method: 'GET',
         cache: 'no-store',
