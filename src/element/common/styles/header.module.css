@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 50;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #f1f5f9;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 16px;
+}
+
+/* CONTAINER */
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* DARK MODE SUPPORT (optional auto) */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: #1f2937;
+    border-bottom: 1px solid #374151;
+  }
+}
+
+/* MOBILE NAV FIX */
+@media (max-width: 768px) {
+  .inner {
+    gap: 10px;
+  }
+}
