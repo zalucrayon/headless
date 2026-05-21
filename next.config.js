@@ -11,6 +11,7 @@ module.exports = withBundleAnalyzer({
 	productionBrowserSourceMaps: true,
 	urbopack: {},
 	images: {
+        dangerouslyAllowLocalIP: true,
 		remotePatterns: serverUrl ? [
 			{
 				protocol: serverUrl.protocol.replace(':', ''),

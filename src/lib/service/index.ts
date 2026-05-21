@@ -53,7 +53,6 @@ export const getPageComponents = async (_id: any, l: any, newsid: any = null, se
     _params.set("l", l);
     _url = _url + "?" + _params.toString();
 
-    console.log(_url)
 
     return await fetch(_url, {
         method: 'GET',

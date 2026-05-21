@@ -131,7 +131,7 @@ export default function Navigation() {
 
         if (targetPage) {
           const baseSlug = targetPage.slugurl?.replace(/\/+$/, "") || "";
-          
+
           let targetPostSlug = postSlug;
           if (localizedSlugs) {
             const targetLangId = _mn?.uid;
@@ -191,7 +191,6 @@ export default function Navigation() {
   useEffect(() => {
     updateConfig(url);
   }, []);
-
   return (
     <>
       <div className="flex items-center order-5 lg:order-2 demo">
@@ -280,7 +279,7 @@ export default function Navigation() {
                       alt={"active" + activlang?.navigationTitle}
                       width={32}
                       height={32}
-                      
+
                     />
                   </span>
                   : config?.langmenu?.pattern == "title_flag" ?
@@ -295,7 +294,7 @@ export default function Navigation() {
                           alt={"active" + activlang?.navigationTitle}
                           width={32}
                           height={32}
-                          
+
                         />
                       </span>
                     </span>
@@ -309,7 +308,7 @@ export default function Navigation() {
                             alt={"active" + activlang?.navigationTitle}
                             width={32}
                             height={32}
-                            
+
                           />
                         </span>
                         <span className="flex ml-2 text-[17px]">{activlang?.navigationTitle ? activlang?.navigationTitle : activlang?.title}</span>
@@ -317,7 +316,7 @@ export default function Navigation() {
                       : <span className="text-[17px]">{activlang?.navigationTitle ? activlang?.navigationTitle : activlang?.title}</span>
                 }
                 {
-                 config?.langmenu?.langm?.length > 1 ?
+                  config?.langmenu?.langm?.length > 1 ?
                     <svg className={`w-2.5 h-2.5 ms-3 ${lmmenuopen ? 'rotate-180' : ''}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"
                       onClick={(e) => setLMenuOpen(!lmmenuopen)}>
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
@@ -327,7 +326,7 @@ export default function Navigation() {
               </button>
               : <div className="text-center  items-center flex flex-wrap items-center">Loading...</div>}
             {
-             config?.langmenu?.langm?.length > 1 ?
+              config?.langmenu?.langm?.length > 1 ?
                 <ul className={`w-max right-0 z-10 level-first absolute top-[40px] bg-slate-100 left-[0px]  ${lmmenuopen ? '' : 'hidden'} border-[1px] rounded`}>
                   {config?.langmenu?.langm?.map((_mn: any, index: any) => (
                     activlang?.uid !== _mn?.languageId ?

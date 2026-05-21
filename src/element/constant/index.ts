@@ -21,4 +21,3 @@ export const checkNotFound = (elementsData: any[]): boolean => {
 export const resolveDynamicMetadata = (elementsData: any[], base: any): any => {
     return base;
 };
-
