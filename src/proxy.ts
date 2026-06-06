@@ -82,8 +82,6 @@ export async function proxy(request: NextRequest) {
         return applySecurityHeaders(NextResponse.next());
     }
 
-    // For detail pages: inject the post slug as a search param so it flows to the API
-    // This detects URLs like /detail/my-post-slug where the last segment is the slug
     const configData = await getConfig();
     if (configData?.pages?.length) {
         const normalizedPath = pathname.replace(/\/+$/, "") || "/";
@@ -96,7 +94,6 @@ export async function proxy(request: NextRequest) {
             const segments = pathname.split('/').filter(Boolean);
             if (segments.length > 1) {
                 const postSlug = segments[segments.length - 1];
-                // Only inject if postslug is not already in search params
                 if (!request.nextUrl.searchParams.has('postslug')) {
                     const url = request.nextUrl.clone();
                     url.searchParams.set('postslug', postSlug);
